@@ -7,6 +7,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "s3" {
+    bucket         = "terraromf-s3-iac-ecs-retos"
+    key            = "dev/ecs-terraform.tfstate"
+    region         = "us-east-1"
+  }
+
+
 }
 
 provider "aws" {
