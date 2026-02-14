@@ -21,6 +21,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Copy dev tfvars to root
+        run: cp env/dev.tfvars ./dev.tfvars
+        
       - name: Terraform Init
         run: terraform init
 
